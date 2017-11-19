@@ -103,9 +103,11 @@ class Elasticsearch(object):
         return self._make_request('post', index=index, body=body, doctype=doc_type, params=params, extra_op='_bulk')
 
     def count(self, body=None, index=None, doc_type=None, params=None, **kwargs):
+    	""" handel count request"""
         return self._make_request('post', index=index, body=body, doctype=doc_type, params=params, extra_op='_count')
 
     def delete(self, index, doc_type=None, id=None, params=None, **kwargs):
+    	""" handel delete request"""
         return self._make_request('delete', index=index, doctype=doc_type, id=id, params=params)
 
     def log_request_fail(self, method, full_url, body, duration, status_code=None):
